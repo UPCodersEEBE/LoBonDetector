@@ -1,8 +1,11 @@
 import PhotoSplitter
 import os
 import time
+ 
 
-PhotoToAnalize = "resources/1.jpg"
+PhotoToAnalize = "resources/1.jpg" # escollim la foto a analitzar
+
+
 
 PhotoSplitter.get_product_slots(PhotoToAnalize)
 

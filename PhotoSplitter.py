@@ -1,10 +1,15 @@
 from PIL import Image 
+import os
+import time
 
-infile = 'resources/t485. 19.32.57.jpg'
+image_paths = []
 
-img = Image.open(infile)
 
-products =[
+for filename in os.listdir("resources"):
+    if filename.endswith(".jpg"):
+        image_paths.append(os.path.join("resources",filename))
+
+products_positons =[
             [(0,870,60,990), (30,830,120,920), (80,760,170,860), (150,690,230,780), (200,580,310,710),
             (280,510,390,630), (366,459,467,546),(426,424,504,497), (477,372,570,457), (542,320,623,404),
             (606,277,685,348), (659,241,741,308), (715,193,821,266), (797,150,874,221), (863,105,946,175)],
@@ -27,8 +32,19 @@ products =[
             (778,471,911,575), (863,404,979,485)]
 ]
 
+# for path in image_paths:
+#     os.mkdir("products/%s" % path[10:])
+#     img = Image.open(path)
+#     for i in range(len(products_positons)):
+#         for j in range(len(products_positons[i])):
+#             img.crop(products_positons[i][j]).save('products/%s/%sx%s.jpg'
+#             % (path[10:], i, j))
 
-for i in range(len(products)):
-    for j in range(len(products[i])):
-        img.crop(products[i][j]).save('Products/5/product%sx%s.x0:%04d.y0:%04d.x1:%04d.y1:%04d.jpg'
-        % (i, j, products[i][j][0], products[i][j][1], products[i][j][2],products[i][j][3]))
+
+def get_product_slots(path):
+    os.mkdir("product_slots")
+    img = Image.open(path)
+    for i in range(len(products_positons)):
+        for j in range(len(products_positons[i])):
+            img.crop(products_positons[i][j]).save('product_slots/%sx%s.jpg' % (i,j))
+    return "product_slots"

@@ -28,7 +28,6 @@ def locate_objects_path(path):
 def get_dims(path):
     width, height = Image.open(path).size
     dims=(width,height)
-    print(dims)
     return dims
     
 def map_object_to_pixels(objects, dims):
@@ -44,12 +43,12 @@ def map_object_to_pixels(objects, dims):
     return ob
 
 def filter_objects(object_name):
-    embotits=['Packaged goods']
+    embotits=['Packaged goods','Food']
+    accepted_object=True
     for item in embotits:
         if item in object_name:
-            return False
-        else:
-            return True
+            accepted_object=False
+    return accepted_object
         
 def check_if_object_over_square(matrix_square,object_square):
     #check horizontally
@@ -88,7 +87,6 @@ def check_all_squares(matrix,objects):
                 object_square=(object_coords[0][0],object_coords[0][1],object_coords[2][0],object_coords[2][1])
                 if check_if_object_over_square(matrix_square,object_square):
                     if matrix_square not in covered_fila:
-                        print(object)
                         covered_fila.append(matrix_square)
                         uncovered_fila.remove(matrix_square)
         covered_matrix.append(covered_fila)
@@ -114,7 +112,6 @@ def check_all_squares_collision(matrix,objects):
                 object_square=(object_coords[0][0],object_coords[0][1],object_coords[2][0],object_coords[2][1])
                 if collision(matrix_square,object_square):
                     if matrix_square not in covered_fila:
-                        print(object)
                         covered_fila.append(matrix_square)
                         uncovered_fila.remove(matrix_square)
         covered_matrix.append(covered_fila)
@@ -218,8 +215,7 @@ def analyze_image(path):
         
         
         
-        
-        
+print(analyze_image('resource/t485. 12.11.00.jpg'))
         
         
         

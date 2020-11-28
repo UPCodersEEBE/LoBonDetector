@@ -43,12 +43,12 @@ def map_object_to_pixels(objects, dims):
     return ob
 
 def filter_objects(object_name):
-    embotits=['Packaged goods', 'Food']
+    embotits=['Packaged goods','Food']
+    accepted_object=True
     for item in embotits:
         if item in object_name:
-            return False
-        else:
-            return True
+            accepted_object=False
+    return accepted_object
         
 def check_if_object_over_square(matrix_square,object_square):
     #check horizontally
@@ -216,8 +216,7 @@ def analyze_image(path):
         
         
         
-        
-        
+print(analyze_image('resource/t485. 12.11.00.jpg'))
         
         
         

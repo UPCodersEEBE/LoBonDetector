@@ -11,7 +11,7 @@ def locate_objects_path(path):
     client = vision.ImageAnnotatorClient()
     
     # The name of the image file to annotate
-    file_name = os.path.abspath(f'resources/{path}')
+    file_name = os.path.abspath(path)
     
     # Loads the image into memory
     with io.open(file_name, 'rb') as image_file:
@@ -22,17 +22,11 @@ def locate_objects_path(path):
     response=client.object_localization(image=image)
     objects = response.localized_object_annotations
     
-    print('Number of objects found: {}'.format(len(objects)))
-    for object_ in objects:
-        print('\n{} (confidence: {})'.format(object_.name, object_.score))
-        print('Normalized bounding polygon vertices: ')
-        for vertex in object_.bounding_poly.normalized_vertices:
-            print(' - ({}, {})'.format(vertex.x, vertex.y))
     return objects
 
     
-def get_dims(filepath):
-    width, height = Image.open(f'resources/{filepath}').size
+def get_dims(path):
+    width, height = Image.open(path).size
     dims=(width,height)
     print(dims)
     return dims

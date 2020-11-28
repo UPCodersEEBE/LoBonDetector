@@ -45,4 +45,4 @@ def get_product_slots(path):
     img = Image.open(path)
     for i in range(len(products_positons)):
         for j in range(len(products_positons[i])):
-            img.crop(products_positons[i][j]).save('product_slots/%sx%s.jpg' % (i,j))
+            img.crop(products_positons[i][j]).save('product_slots/%02dx%02d.jpg' % (i,j))

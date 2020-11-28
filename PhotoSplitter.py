@@ -1,6 +1,6 @@
 from PIL import Image 
 
-infile = 'resources/t485. 09.20.53.jpg'
+infile = 'resources/t485. 19.32.57.jpg'
 
 img = Image.open(infile)
 
@@ -30,5 +30,5 @@ products =[
 
 for i in range(len(products)):
     for j in range(len(products[i])):
-        img.crop(products[i][j]).save('Products/product%sx%s.x0:%04d.y0:%04d.x1:%04d.y1:%04d.jpg'
+        img.crop(products[i][j]).save('Products/5/product%sx%s.x0:%04d.y0:%04d.x1:%04d.y1:%04d.jpg'
         % (i, j, products[i][j][0], products[i][j][1], products[i][j][2],products[i][j][3]))

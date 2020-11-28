@@ -5,9 +5,9 @@ import time
 image_paths = []
 
 
-for filename in os.listdir("resources"):
-    if filename.endswith(".jpg"):
-        image_paths.append(os.path.join("resources",filename))
+# for filename in os.listdir("resources"):
+#     if filename.endswith(".jpg"):
+#         image_paths.append(os.path.join("resources",filename))
 
 products_positons = [
             [(0,870,60,990), (30,830,120,920), (80,760,170,860), (150,690,230,780), (200,580,310,710),

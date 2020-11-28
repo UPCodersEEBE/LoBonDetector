@@ -4,8 +4,6 @@ from PIL import Image
 # Imports the Google Cloud client library
 from google.cloud import vision
 
-path = 'resources/t485. 19.32.57.jpg'
-
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "LoBonDetector-95406d06e11b.json"
 
 def locate_objects_path(path):

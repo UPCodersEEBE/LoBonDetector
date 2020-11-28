@@ -6,16 +6,21 @@ import time
  
 estat_estanteries = [[],[],[],[],[]]
 
-PhotoToAnalize = "resources/1.jpg" # escollim la foto a analitzar
+PhotoToAnalize = "resources/t485. 09.44.27.jpg" # escollim la foto a analitzar
 
 
 PhotoSplitter.get_product_slots(PhotoToAnalize)
 
-print(google_annotate.analyze_image(PhotoToAnalize[10:]))
+m = google_annotate.analyze_image(PhotoToAnalize[10:])
 
-print(Prediction.prediccio(PhotoToAnalize))
+c = []
+for filename in os.listdir("product_slots"):
+    state = Prediction.prediccio("product_slots/%s" % filename)
+    c.append(state)
 
-time.sleep(4)
+print(c)
 
-for file in os.listdir("product_slots"):
-    os.remove("product_slots/%s" % file)
+# time.sleep(4)
+
+# for file in os.listdir("product_slots"):
+#     os.remove("product_slots/%s" % file)

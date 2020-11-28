@@ -11,7 +11,7 @@ def prepare(filepath):
 
 model = tf.keras.models.load_model("model.h5")
 c=[]
-directory = r'Test'
+directory = r'product_slots'
 for filename in os.listdir(directory):
     if filename.endswith(".jpg") or filename.endswith(".png"):
         c.append(os.path.join(directory, filename))

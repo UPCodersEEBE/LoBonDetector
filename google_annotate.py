@@ -113,8 +113,18 @@ def check_all_squares(matrix,objects):
         uncovered_matrix.append(uncovered_fila)
     return covered_matrix, uncovered_matrix
 
-        
-        
+
+def estanteries(matrix,a):
+    estanteria=[]
+    for fila in range(len(matrix)):
+        fils=[]
+        for cela in matrix[fila]:
+            if cela in a[fila]:
+                fils.append(1)
+            else:
+                fils.append(0)
+        estanteria.append(fils)
+    return estanteria
         
         
         

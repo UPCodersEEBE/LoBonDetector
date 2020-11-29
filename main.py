@@ -32,6 +32,7 @@ def complete_function(PhotoToAnalize):
                 estat_estanteries[f].append(Prediction.prediccio("product_slots/%s" % c[x]))
             x += 1
         f +=1
+        
     for file in os.listdir("product_slots"):
         os.remove("product_slots/%s" % file)
     return(estat_estanteries)

@@ -1,6 +1,7 @@
 #carpeta fotos per proves
 .DS_Store
 product_slots
+exemple_fotos
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

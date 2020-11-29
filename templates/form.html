@@ -8,6 +8,9 @@
     }
   </style>
 
+{% extends "base.html" %}
+{% block content %}
+
 <form class="form-inline" method="POST" action="{{ url_for('template_test') }}">
   <div class="form-group">
     <div class="input-group">
@@ -21,3 +24,5 @@
     <button type="submit" class="btn btn-primary my-1">Anar</button>
   </div>
 </form>
+
+{% endblock %}

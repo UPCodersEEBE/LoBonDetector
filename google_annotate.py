@@ -134,7 +134,6 @@ def analyze_image(path):
     objects=locate_objects_path(path)
     dims=get_dims(path)
     objects_dict=map_object_to_pixels(objects,dims)
-    print(objects_dict)
     matrix=[[(0, 870, 60, 990),
   (30, 830, 120, 920),
   (80, 760, 170, 860),

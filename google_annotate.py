@@ -214,9 +214,7 @@ def analyze_image(path):
     response=estanteries(matrix,a)
     return response
         
-        
-        
-print(analyze_image('resource/t485. 12.11.00.jpg'))
+
         
         
         

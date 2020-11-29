@@ -1,7 +1,7 @@
 import cv2
 import tensorflow as tf
 import os
-CATEGORIES = ['Empty','NotEmpty']
+CATEGORIES = [0,1]
 def prepare(filepath):
     IMG_SIZE = 70  # 50 in txt-based
     img_array = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)

@@ -1,8 +1,8 @@
-import PhotoSplitter
-import google_annotate
-import Prediction
 import os
-import time
+
+import PhotoSplitter
+import Prediction
+from image_modifier import analyze_image
  
 def compta_buits(final_state):
     buits=0
@@ -21,7 +21,7 @@ def complete_function(PhotoToAnalize):
         c.append(file)
     c.sort()
 
-    m = google_annotate.analyze_image(PhotoToAnalize)
+    m = analyze_image(PhotoToAnalize)
     x = 0
     f = 0
     for i in m:

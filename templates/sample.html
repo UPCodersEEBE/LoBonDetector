@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% block content %}
+  <h3> This is the start of my child template</h3>
+
+  <canvas id="myCanvas" width="1920" height="1080" style="border:1px solid #000000; background: url('t485. 13.18.01.jpg')">
+  </canvas>
+
+  <script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  var bkGround = new Image();
+  bkGround.onload = function(){
+  ctx.drawImage(bkGround,69,50);   
+  }​;
+  bkGround.src = 'bg.jpg';
+  </script>
+{% endblock %}

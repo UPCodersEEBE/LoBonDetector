@@ -29,6 +29,12 @@
   align-items: flex-start;
   }
 
+  .foto{
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding: 2%;
+  }
 
 </style>
 <body>
@@ -52,7 +58,7 @@
 <div>
   <div class="grid-container">
     <div class="grid-item">
-      <h2>Buits: {{buits}}</h2>
+      <h3>Buits: {{buits}}</h3>
     </div>
     <div class="grid-item">
       <div class = "mt-2">
@@ -65,8 +71,8 @@
         <button type="button" class="btn btn-lg btn-info"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button> Obstacle. Esperi següent anàlisi.
       </div>
     </div>
-    <img src= {{"resources/" + select}} alt="No s'ha trobat la foto">
   </div>
+  <img class = "foto" src= "{{url_for('resources', filename = 't485. 09.40.33.jpg')}}" alt="No s'ha trobat la foto">
 </div>
 </body>
 {% endblock %}

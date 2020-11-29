@@ -6,7 +6,7 @@ import time
  
 estat_estanteries = [[],[],[],[],[]]
 
-PhotoToAnalize = "resources/t485. 20.10.27.jpg" # escollim la foto a analitzar
+PhotoToAnalize = "resources/t485. 09.44.27.jpg" # escollim la foto a analitzar
 
 
 PhotoSplitter.get_product_slots(PhotoToAnalize)
@@ -34,8 +34,5 @@ for i in m:
 for i in estat_estanteries:
     print(i)
 
-
-# time.sleep(4)
-
-# for file in os.listdir("product_slots"):
-#     os.remove("product_slots/%s" % file)
+for file in os.listdir("product_slots"):
+    os.remove("product_slots/%s" % file)

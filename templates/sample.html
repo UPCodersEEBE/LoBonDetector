@@ -4,7 +4,7 @@
 
 <style>
   .centered {
-  margin-top: 10%;
+  margin-top: 4%;
   height:50%; 
   flex-direction: column; 
   display:flex;
@@ -12,7 +12,7 @@
   justify-content: center;
   }
   .grid-container { 
-  padding: 5%;
+  padding: 3%;
   position: absolute;
   bottom: 0;
   display:flex;
@@ -32,6 +32,7 @@
 
 </style>
 <body>
+<p>Hora d'anàlisi: {{select[5:-4]}}</p>
 <div class="centered">
   {% for fila in final_state %}
   <div class = "mt-2">
@@ -64,6 +65,7 @@
         <button type="button" class="btn btn-lg btn-info"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button> Obstacle. Esperi següent anàlisi.
       </div>
     </div>
+    <img src= {{"resources/" + select}} alt="No s'ha trobat la foto">
   </div>
 </div>
 </body>

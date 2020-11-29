@@ -14,11 +14,11 @@ app = Flask(__name__)
 
 # final_state = main.complete_function(image_path)
 
-final_state = [[1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1],
-[1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
-[1, 1, 1, 1, 'X', 'X', 'X', 1, 1, 1, 1, 1, 1, 1],
-[1, 1, 1, 0, 1, 'X', 'X', 'X', 'X', 1, 1, 1, 1, 1, 1],
-[1, 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 1, 1, 1]]
+# final_state = [[1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1],
+# [1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
+# [1, 1, 1, 1, 'X', 'X', 'X', 1, 1, 1, 1, 1, 1, 1],
+# [1, 1, 1, 0, 1, 'X', 'X', 'X', 'X', 1, 1, 1, 1, 1, 1],
+# [1, 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 1, 1, 1]]
 
 
 
@@ -29,11 +29,11 @@ def form():
 
 @app.route("/", methods = ["GET", "POST"])
 def template_test():
-    #select = request.form.get('comp_select')
-    #print(select)
-    #final_state = complete_function("resources/" + select)
+    select = request.form.get('comp_select')
+    print(select)
+    final_state = complete_function("resources/" + select)
     buits=compta_buits(final_state)
-    return render_template('sample.html', final_state=final_state, buits=buits)
+    return render_template('sample.html', final_state=final_state, buits=buits, select = select)
 
 
 app.run(debug=True, use_reloader=False)

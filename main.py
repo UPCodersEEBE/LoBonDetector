@@ -4,12 +4,21 @@ import Prediction
 import os
 import time
  
+def compta_buits(final_state):
+    buits=0
+    for fila in final_state:
+        for item in final_state:
+            if item==0:
+                buits+=1
+    return buits
+    
 def complete_function(PhotoToAnalize):
     estat_estanteries = [[],[],[],[],[]]
     PhotoSplitter.get_product_slots(PhotoToAnalize)
 
     c = []
-    for file in os.listdir("product_slots"):
+    for file in os.listdir("produc
+    t_slots"):
         c.append(file)
     c.sort()
 
@@ -27,11 +36,3 @@ def complete_function(PhotoToAnalize):
     for file in os.listdir("product_slots"):
         os.remove("product_slots/%s" % file)
     return(estat_estanteries)
-
-def compta_buits(final_state):
-    buits=0
-    for fila in final_state:
-        for item in final_state:
-            if item==0:
-                buits+=1
-    return buits

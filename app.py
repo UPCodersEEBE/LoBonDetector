@@ -7,7 +7,7 @@ Created on Sun Nov 29 00:53:01 2020
 """
 from flask import Flask, render_template, request
 import os
-import main
+from main import complete_function, compta_buits
 
 app = Flask(__name__)
 
@@ -32,7 +32,7 @@ def form():
 def template_test():
     select = request.form.get('comp_select')
     print(select)
-    final_state = main.complete_function("resources/" + select)
+    final_state = complete_function("resources/" + select)
     buits=compta_buits(final_state)
     return render_template('sample.html', final_state=final_state, buits=buits)
 

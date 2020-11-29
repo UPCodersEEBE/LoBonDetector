@@ -31,9 +31,9 @@ def form():
 def template_test():
     select = request.form.get('comp_select')
     print(select)
-
     final_state = main.complete_function("resources/" + select)
-    return render_template('sample.html', final_state=final_state)
+    buits=compta_buits(final_state)
+    return render_template('sample.html', final_state=final_state, buits=buits)
 
 
 app.run(debug=True, use_reloader=False)

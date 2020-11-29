@@ -28,6 +28,7 @@ def locate_objects_path(path):
 def get_dims(path):
     width, height = Image.open(path).size
     dims=(width,height)
+
     return dims
     
 def map_object_to_pixels(objects, dims):
@@ -213,7 +214,8 @@ def analyze_image(path):
     response=estanteries(matrix,a)
     return response
         
-
+        
+    
         
         
         

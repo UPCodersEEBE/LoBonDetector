@@ -11,9 +11,24 @@
   align-items:center;
   justify-content: center;
   }
+  .kpi_legend {
+  margin-top: 10%;
+  height:50%; 
+  flex-direction: row; 
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
 </style>
 <body>
 <div class="centered">
+  <div class=kpi_legend">
+  Buits:{{buits}}
+
+  <button type="button" class="btn btn-lg btn-success"><i class="fa fa-check"></i></button>
+  <button type="button" class="btn btn-lg btn-danger"><i class="fa fa-times"></i></button>
+  <button type="button" class="btn btn-lg btn-info"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+  </div>
   {% for fila in final_state %}
   <div class = "mt-2">
     {% for item in fila %}

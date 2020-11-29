@@ -11,7 +11,6 @@ import main
 
 app = Flask(__name__)
 
-# image_path = "resources/t485. 09.40.33.jpg"
 
 # final_state = main.complete_function(image_path)
 

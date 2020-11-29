@@ -1,0 +1,23 @@
+<style>
+    form {
+    height:50%; 
+    flex-direction: column; 
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    }
+  </style>
+
+<form class="form-inline" method="POST" action="{{ url_for('template_test') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Imatge</label>
+            <select name="comp_select" class="custom-select my-1 mr-sm-2" >
+              {% for file in files %}
+              <option value="{{ file }}">{{ file }}</option>
+              {% endfor %}
+            </select>
+    </div>
+    <button type="submit" class="btn btn-primary my-1">Anar</button>
+  </div>
+</form>

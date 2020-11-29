@@ -1,18 +1,32 @@
 
 {% extends "base.html" %}
 {% block content %}
-  <h3> This is the start of my child template</h3>
 
-  <canvas id="myCanvas" width="1920" height="1080" style="border:1px solid #000000; background: url('t485. 13.18.01.jpg')">
-  </canvas>
-
-  <script>
-  var canvas = document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d");
-  var bkGround = new Image();
-  bkGround.onload = function(){
-  ctx.drawImage(bkGround,69,50);   
-  }​;
-  bkGround.src = 'bg.jpg';
-  </script>
+<style>
+  .centered {
+  margin-top: 10%;
+  height:50%; 
+  flex-direction: column; 
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
+</style>
+<body>
+<div class="centered">
+  {% for fila in final_state %}
+  <div class = "mt-2">
+    {% for item in fila %}
+    {% if item == 1 %}
+    <button type="button" class="btn btn-lg btn-success"><i class="fa fa-check"></i></button>
+    {% elif item == 0 %}
+    <button type="button" class="btn btn-lg btn-danger"><i class="fa fa-times"></i></button>
+    {% else %}
+    <button type="button" class="btn btn-lg btn-info"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+</body>
 {% endblock %}
